@@ -9,7 +9,7 @@ import java.util.UUID;
 @Table(name = "tenant_registry", schema = "public")
 @Getter
 @Setter
-public class TenantRegistry {
+public class TenantRegistry extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
