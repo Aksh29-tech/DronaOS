@@ -1,23 +1,34 @@
-package com.droneos.entities;
+//package com.droneos.entities;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import java.util.UUID;
-
-@Entity
-@Table(name = "roles") // Notice: No schema is defined here. Hibernate will resolve it dynamically.
-@Getter
-@Setter
-public class Role {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id; //[cite: 1]
-
-    @Column(name = "role_name", nullable = false, unique = true)
-    private String roleName; //[cite: 1]
-
-    @Column(nullable = false)
-    private Boolean permissions; //[cite: 1]
-}
+//import com.droneos.entities.BaseEntity;
+//import jakarta.persistence.*;
+//import lombok.Getter;
+//import lombok.Setter;
+//import org.hibernate.annotations.JdbcTypeCode;
+//import org.hibernate.type.SqlTypes;
+//
+//import java.util.List;
+//import java.util.UUID;
+//
+//@Entity
+//@Table(name = "roles")
+//@Getter
+//@Setter
+//public class Role extends BaseEntity {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.UUID)
+//    private UUID id;
+//
+//    @Column(name = "role_name", nullable = false, unique = true)
+//    private String roleName;
+//
+//    /**
+//     * Modernized JSONB mapping.
+//     * Leveraging native Hibernate 6+ support instead of third-party libraries.
+//     * This instructs Hibernate to treat this List natively as a JSON structure in PostgreSQL.
+//     */
+//    @JdbcTypeCode(SqlTypes.JSON)
+//    @Column(name = "permissions", columnDefinition = "jsonb", nullable = false)
+//    private List<String> permissions;
+//}
