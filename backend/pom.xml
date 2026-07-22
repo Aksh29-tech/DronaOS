@@ -29,6 +29,18 @@
 	<properties>
 		<java.version>21</java.version>
 	</properties>
+    <dependencyManagement>
+        <dependencies>
+            <!-- Testcontainers BOM (The Rulebook) -->
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>1.19.7</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -77,6 +89,33 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers-bom</artifactId>
+            <version>1.19.7</version> <!-- Use the latest stable version -->
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!-- Core Testcontainers library -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 (Jupiter) integration for Testcontainers -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Dedicated PostgreSQL module for streamlined database bootstrapping -->
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
